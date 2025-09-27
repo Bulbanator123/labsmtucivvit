@@ -1,4 +1,4 @@
-def describe_person(name: str, age=30) -> str:
+def describe_person(name: str, age: int = 30) -> str:
     years = "лет"
     if age < 0:
         print("Ваш человек ещё не родился")
