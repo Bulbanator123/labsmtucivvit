@@ -15,10 +15,13 @@ describe_person("Илья", 0)
 describe_person("Илья", 10)
 describe_person("Илья", 2)
 describe_person("Илья", 1)
+describe_person("Илья")
 
 # ошибки
 
-describe_person("Илья", 2, 3)  # функция принимает только 2 аргумента
-describe_person(1, 1)
+# describe_person("Илья", 2, 3)
+# функция принимает только 2 аргумента или первый
+
+# describe_person(1, 1)
 # функция принимает первый аргумент только как строку,
 # а второй только как целочисленное число

@@ -1,13 +1,13 @@
 def is_prime(number: int) -> bool:
     if type(number) is not int or number < 1:
         print("Это не натуральное число")
-        return 0
+        return False
     elif number == 1:
-        return 0
+        return False
     for i in range(2, int(number ** 0.5) + 1):
         if number % i == 0:
-            return 0
-    return 1
+            return False
+    return True
 
 
 print(is_prime(2))
