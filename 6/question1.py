@@ -4,7 +4,7 @@ class UserAccount():
         # Конструктор
         self.username = username
         self.email = email
-        self.password = password
+        self.__password = password # скрытый атрибут
 
     def set_password(self, new_password):
         # Безопасно меняет пароль аккаунта
@@ -14,13 +14,13 @@ class UserAccount():
         if len(new_password) < 8:
             raise ValueError("Пароль должен содержать минимум 8 символов")
 
-        if new_password == self.password:
+        if new_password == self.__password:
             raise ValueError("Вы ввели предыдущий пароль")
-        self.password = new_password
+        self.__password = new_password
 
     def check_password(self, password):
         # Проверка правильности пароля
-        return self.password == password
+        return self.__password == password
 
 
 Daniil = UserAccount("_Dank0", "123@aaaaaaaaaaa.aa", "1eirere")

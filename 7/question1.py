@@ -7,7 +7,7 @@ class Employee():
         self.id = id
 
     def get_info(self):
-        return [self.name, self.id]
+        return f"Сотрудник {self.name} c id {self.id}"
 
 
 class Manager(Employee):
@@ -23,7 +23,7 @@ class Manager(Employee):
         print("Закончил(а) =)")
 
     def get_info(self):
-        return super().get_info() + [self.department]
+        return "Менеджер" + super().get_info()[9:] + f" руководит отделением {self.department}"
 
 
 class Technician(Employee):
@@ -39,7 +39,7 @@ class Technician(Employee):
         print("Закончил(а) =)")
 
     def get_info(self):
-        return super().get_info() + [self.specialization]
+        return "Техник" + super().get_info()[9:] + f" специализируется на {self.specialization}"
 
 
 class TechManager(Manager, Technician):
@@ -56,22 +56,17 @@ class TechManager(Manager, Technician):
             print(el.get_info())
 
     def get_info(self):
-        return super().get_info() + [self.department, self.specialization]
-
-    def perform_maintenance(self, time):
-        return super().perform_maintenance(time)
-
-    def manage_project(self, time):
-        return super().manage_project(time)
+        return "Техменеджер" + Employee.get_info(self)[9:] + \
+                f" специализируется на {self.specialization}, руководит отделением {self.department}"
 
 
 emp1 = Employee("Витя", "2278")
 emp2 = Employee("Иван", "64")
 emp3 = Employee("Валя", "52")
 
-man1 = Manager("Митя", "2278", "bul")
-man2 = Manager("Диван", "64", "bul")
-man3 = Manager("Валера", "52", "prod")
+man1 = Manager("Митя", "1278", "bul")
+man2 = Manager("Диван", "14", "bul")
+man3 = Manager("Валера", "12", "prod")
 
 tech1 = Technician("Туня", "111", "it")
 tech2 = Technician("Работник века", "1234", "kiib")

@@ -6,7 +6,7 @@ class Vehicle():
 
     def get_info(self):
         # возвращаем массив с информацией о траспорте
-        return [self.make, self.model]
+        return f"Транспорт с маркой {self.make}, модель {self.model}"
 
 
 class Car(Vehicle):
@@ -17,7 +17,7 @@ class Car(Vehicle):
 
     def get_info(self):
         # возвращаем массив с информацией об автомобиле
-        return super().get_info() + [self.fuel_type]
+        return "машина" + super().get_info()[9:] + f" может ехать на {self.fuel_type} топливе"
 
 
 veh1 = Vehicle("boeng", "777")

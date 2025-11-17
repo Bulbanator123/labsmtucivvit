@@ -16,13 +16,13 @@ def subst(num1: int, num2: int) -> int:
 
 def multi(num1: int, num2: int) -> int:
     # произведение двух эментов
-    if num2 == 0:
-        raise ValueError("Деление на ноль невозможно")
     return num1 * num2
 
 
 def devide(num1: int, num2: int) -> int:
     # частное (целое) двух эментов
+    if num2 == 0:
+        raise ValueError("Деление на ноль невозможно")
     return num1 // num2
 
 
